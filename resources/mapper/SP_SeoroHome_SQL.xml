@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.softpower.seoro.mapper.SP_SeoroHome_Mapper">
+  <select id="getBoardList" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT CONTENT_ID ,
+            	VIEW_COUNT ,
+            	TITLE ,
+            	CONTENT ,
+            	CREATE_USER
+			  FROM seoro.board
+			 WHERE 1 = 1
+			   AND BOARD_TYPE = 1
+			   AND CREATE_DATE BETWEEN '2018-02-27' AND '2018-02-28'
+			   ORDER BY TITLE DESC
+        ]]>
+    </select>
+</mapper>
